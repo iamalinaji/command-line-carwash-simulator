@@ -6,3 +6,4 @@ Valid command are:
 3) add_car <luxury_coefficient> 
 4) show_stage_info <stage_id>
 5) show_carwash_info 
+6) finish. This command continues the simulation untill job on all cars are finished.
