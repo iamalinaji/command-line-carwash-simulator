@@ -17,7 +17,7 @@ int main()
         {
             int temp;
             int num_of_workers;
-        case add_stage:
+        case commandtype::add_stage:
             ss >> num_of_workers;
             for (int i = 0; i < num_of_workers; i++)
             {
@@ -28,12 +28,12 @@ int main()
             worker_time_coefficients.clear();
             cout << "OK" << endl;
             break;
-        case add_car:
+        case commandtype::add_car:
             ss >> luxury_coefficient;
             ali_carwash.add_car(luxury_coefficient);
             cout << "OK" << endl;
             break;
-        case advance_time:
+        case commandtype::advance_time:
             ss >> advance_time_index;
             do
             {
@@ -42,14 +42,14 @@ int main()
             } while (advance_time_index != 0);
             cout << "OK" << endl;
             break;
-        case show_stage_info:
+        case commandtype::show_stage_info:
             ss >> stage_number;
             ali_carwash.show_stage_info(stage_number);
             break;
-        case show_carwash_info:
+        case commandtype::show_carwash_info:
             ali_carwash.show_carwash_info();
             break;
-        case finish:
+        case commandtype::finish:
             ali_carwash.finish();
             cout << "OK" << endl;
         default:

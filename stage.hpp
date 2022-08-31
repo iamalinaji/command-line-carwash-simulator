@@ -144,7 +144,7 @@ class stage
                 if (worker_car_ids[i] == -1)
                     continue;
                 car_address = this->find_car_address(worker_car_ids[i]);
-                in_stage_workers[i].assign_car(car_address, 0);
+                in_stage_workers[i].assign_car(car_address, false);
             }
         }
     }

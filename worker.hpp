@@ -29,7 +29,7 @@ class worker
     {
         return free;
     }
-    void assign_car(car *car_to_be_assigned, int set_time_or_not = 1)
+    void assign_car(car *car_to_be_assigned, bool set_time_or_not = true)
     {
         free = false;
         worker_car = car_to_be_assigned;

@@ -11,7 +11,7 @@ class carwash
     std::vector<car> done_washing_cars;
 
   public:
-    void add_stage(std::vector<int> worker_time_coefficients);
+    void add_stage(std::vector<int> &worker_time_coefficients);
     void add_car(int luxury_coefficient);
     void show_stage_info(int id_of_stage);
     void show_carwash_info();

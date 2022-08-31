@@ -1,12 +1,12 @@
 #include "carwash.hpp"
 
-void carwash::add_stage(std::vector<int> worker_time_coefficients)
+void carwash::add_stage(std::vector<int> &worker_time_coefficients)
 {
     stage stage_to_be_pushed;
     worker temp_worker;
-    for (int i = 0; i < worker_time_coefficients.size(); i++)
+    for (int worker_time_coefficient : worker_time_coefficients)
     {
-        temp_worker.set_worker_info(new_worker_id, worker_time_coefficients[i]);
+        temp_worker.set_worker_info(new_worker_id, worker_time_coefficient);
         new_worker_id++;
         stage_to_be_pushed.add_worker(temp_worker);
     }

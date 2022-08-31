@@ -1,5 +1,5 @@
 #include "carwash.hpp"
-enum string_code
+enum class commandtype
 {
     add_stage,
     add_car,
@@ -9,18 +9,18 @@ enum string_code
     finish
 };
 
-string_code hashit(std::string const &instring)
+commandtype hashit(std::string const &instring)
 {
     if (instring == "add_stage")
-        return add_stage;
+        return commandtype::add_stage;
     if (instring == "add_car")
-        return add_car;
+        return commandtype::add_car;
     if (instring == "advance_time")
-        return advance_time;
+        return commandtype::advance_time;
     if (instring == "show_stage_info")
-        return show_stage_info;
+        return commandtype::show_stage_info;
     if (instring == "show_carwash_info")
-        return show_carwash_info;
+        return commandtype::show_carwash_info;
     if (instring == "finish")
-        return finish;
+        return commandtype::finish;
 }
