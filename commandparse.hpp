@@ -1,3 +1,6 @@
+#ifndef COMMANDPARSE_HPP
+#define COMMANDPARSE_HPP
+
 #include "carwash.hpp"
 enum class commandtype
 {
@@ -6,7 +9,8 @@ enum class commandtype
     advance_time,
     show_stage_info,
     show_carwash_info,
-    finish
+    finish,
+    unkown_command
 };
 
 commandtype hashit(std::string const &instring)
@@ -23,4 +27,8 @@ commandtype hashit(std::string const &instring)
         return commandtype::show_carwash_info;
     if (instring == "finish")
         return commandtype::finish;
+    else
+        return commandtype::unkown_command;
 }
+
+#endif

@@ -2,8 +2,8 @@
 
 void carwash::add_stage(std::vector<int> &worker_time_coefficients)
 {
-    stage stage_to_be_pushed;
-    worker temp_worker;
+    Stage stage_to_be_pushed;
+    Worker temp_worker;
     for (int worker_time_coefficient : worker_time_coefficients)
     {
         temp_worker.set_worker_info(new_worker_id, worker_time_coefficient);
@@ -15,7 +15,7 @@ void carwash::add_stage(std::vector<int> &worker_time_coefficients)
 
 void carwash::add_car(int luxury_coefficient)
 {
-    car temp_car;
+    Car temp_car;
     temp_car.set_info(new_car_id, luxury_coefficient);
     waiting_cars.push_back(temp_car);
     new_car_id++;
@@ -46,7 +46,7 @@ void carwash::show_carwash_info()
 }
 void carwash::move_cars_in_carwashqueue_to_stage_zero()
 {
-    car tempcar;
+    Car tempcar;
     if (waiting_cars.empty() == false)
     {
         tempcar = waiting_cars[0];
@@ -60,7 +60,7 @@ void carwash::accept_cars_in_stages(int i)
 }
 void carwash::move_car_to_next_stage(int i)
 {
-    car *tempcar_pt;
+    Car *tempcar_pt;
     if (carwash_stages[i + 1].is_queue_free() && (i != carwash_stages.size() - 1))
     {
         tempcar_pt = carwash_stages[i].pickup_done_car();
@@ -106,7 +106,7 @@ void carwash::finish()
     }
 }
 
-void carwash::move_car_to_finished_list(car *car_to_be_moved)
+void carwash::move_car_to_finished_list(Car *car_to_be_moved)
 {
     if (car_to_be_moved != NULL)
     {

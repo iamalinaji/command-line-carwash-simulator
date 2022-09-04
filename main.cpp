@@ -1,4 +1,4 @@
-#include "header.hpp"
+#include "commandparse.hpp"
 using namespace std;
 int main()
 {
@@ -52,6 +52,10 @@ int main()
         case commandtype::finish:
             ali_carwash.finish();
             cout << "OK" << endl;
+            break;
+        case commandtype::unkown_command:
+            cout<<"The command you entered is not recognized. Please try again.\n";
+            break;
         default:
             break;
         }

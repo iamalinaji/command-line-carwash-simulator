@@ -1,3 +1,6 @@
+#ifndef CARWASH_HPP
+#define CARWASH_HPP
+
 #include "stage.hpp"
 
 class carwash
@@ -6,9 +9,9 @@ class carwash
     int time_elpased = 0;
     int new_worker_id = 0;
     int new_car_id = 0;
-    std::vector<stage> carwash_stages;
-    std::vector<car> waiting_cars;
-    std::vector<car> done_washing_cars;
+    std::vector<Stage> carwash_stages;
+    std::vector<Car> waiting_cars;
+    std::vector<Car> done_washing_cars;
 
   public:
     void add_stage(std::vector<int> &worker_time_coefficients);
@@ -30,5 +33,7 @@ class carwash
         return false;
     }
     void move_cars_in_carwashqueue_to_stage_zero();
-    void move_car_to_finished_list(car *car_to_be_moved);
+    void move_car_to_finished_list(Car *car_to_be_moved);
 };
+
+#endif
